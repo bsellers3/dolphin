@@ -95,6 +95,9 @@ std::unique_ptr<optparse::OptionParser> CreateParser(ParserOptions options)
       .metavar("<16-character ASCII title ID>")
       .type("string")
       .help("Launch a NAND title");
+  parser->add_option("-i", "--ipl")
+      .action("store_true")
+      .help("Load ipl with no disc");
   parser->add_option("-C", "--config")
       .action("append")
       .metavar("<System>.<Section>.<Key>=<Value>")
