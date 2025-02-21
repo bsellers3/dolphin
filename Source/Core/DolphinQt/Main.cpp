@@ -213,6 +213,11 @@ int main(int argc, char* argv[])
     }
     game_specified = true;
   }
+  else if (options.is_set("ipl"))
+  {
+    boot = std::make_unique<BootParameters>(BootParameters::IPL{DiscIO::Region::NTSC_U});
+    game_specified = true;
+  }
   else if (!args.empty())
   {
     boot = BootParameters::GenerateFromFile(
